@@ -1,0 +1,137 @@
+:root {
+  --blue: #034078;
+  --dark_blue: #001f54;
+  --black:#0A1128;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--dark_blue); 
+  background-color: var(--black); 
+}
+
+.featured-artists {
+  padding: 3rem 0;
+  background-color: var(--dark_blue);
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.artist-card {
+  background-color: var(--blue);
+  padding: 20px;
+  border: 1px solid var(--dark_blue);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; 
+  overflow: hidden; 
+  animation: backwards;
+}
+
+.artist-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+.artist-card h3 {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.featured-artists h2{
+    font-size: 48px; 
+    font-weight: bold; 
+    color: var(--blue); 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+    margin-top: 10px; 
+    margin-bottom: 20px;
+    font-family: 'Great Vibes', cursive; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.featured-artists::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+  transform: rotate(45deg);
+  opacity: 0;
+  animation: shine 5s linear; 
+}
+.artist-card p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.genres-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.genres-list li {
+  margin-right: 20px;
+}
+
+.genres-list a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.genres-list a:hover {
+  color: var(--black);
+}
+
+.more-btn {
+    background-color: #00698f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .more-btn:hover {
+    background-color: var(--black);
+  }
+
+  
+/* Media Queries for Fine-tuning */
+@media (max-width: 768px) { 
+  .artist-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-grid {
+    grid-template-columns: 1fr; /
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
